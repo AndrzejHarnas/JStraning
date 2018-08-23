@@ -2,6 +2,8 @@
 
 var slideNumber = Math.floor(Math.random()*5)+1;
 //slideNumber=1;
+var timer1=0;
+var timer2=0;
 
 
 function timersecond(){
@@ -37,20 +39,48 @@ function writeNumbers(){
 	var number2 = document.getElementById("fieldText2").value;
 	var solution = "";
 	
-	
-for(i=number1; i<=number2; i++){
+if(number1 < number2){	
+    for(i=number1; i<=number2; i++){
 	solution=solution + i + " ";
+                            	}
+                   
+} else if(number1 > number2){
 	
-}
+	for(i=number1; i>=number2; i--){
+	solution=solution + i + " ";
+	                               }
+	
+                         }
+
+
 	document.getElementById("NumSol").innerHTML = solution;
-	
+
+}	
+
+function hidden(){
+	$("#slider").fadeOut(500);
 }
+
 
 function changeSlide(){
 	slideNumber++; 
 	if(slideNumber > 5) slideNumber=1;
 	var plik = "<img src=\"pictures/"+ slideNumber +".jpg \"/>";
-	document.getElementById("dupa").innerHTML = plik;
-	setTimeout("changeSlide()",5000);
+	document.getElementById("slider").innerHTML = plik;
+	$("#slider").fadeIn(500);
+	
+	timer1=setTimeout("changeSlide()",5000);
+	timer2=setTimeout("hidden()",4500);
 }	
+
+function markSlide(Snumber) {
+	
+	clearTimeout(timer1);
+    clearTimeout(timer2);
+	slideNumber=Snumber-1;
+	hidden();
+
+	setTimeout("changeSlide()",500);
+	
+}
 	
