@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<title> Matematyka w JS </title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+
+<script type="text/javascript">
+
+document.write(0.1 * 5);
+document.write("<br />");
+document.write(0.15 * 3);
+document.write("<br />");
+document.write(0.1 + 0.2);
+document.write("<br />");
+document.write(Math.pow(2,53));
+document.write("<br />");
+document.write(Math.pow(2,53)+1); 
+document.write("<br />");
+document.write(Math.pow(2,53)+2); 
+document.write("<br />");
+document.write(Math.pow(2,53)*2); 
+
+document.write("<br />");
+if(0.1+0.2== 0.3) document.write("true");
+else document.write("false");
+document.write("<br />");
+
+var x;
+
+x = Math.round((0.1+0.2)*10)/10;
+
+
+document.write(x);
+document.write("<br />");
+
+
+x= 0.15*3;
+x= x.toFixed(2);
+
+document.write(x);
+document.write("<br />");
+document.write("<br />");
+
+x= 1.005;
+
+x= Math.round(x*100)/100;
+document.write(x);
+document.write("<br />");
+
+x= 1.005;
+x= x.toFixed(2);
+
+document.write(x);
+document.write("<br />");
+
+Number.prototype.round = function(miejsc)
+{
+return +(Math.round(this+"e+"+miejsc) + "e-" + miejsc);
+
+}
+
+x= 1.005;
+x= x.round(2);
+
+document.write(x);
+document.write("<br />");
+document.write("<br />");
+document.write("<br />");
+
+
+var pln = 1000;
+document.write("Wpłata: " +pln+ " PLN <br /> <br />");
+
+//przewalutowanie
+
+var usd = pln / 4.00835701;
+document.write("Saldo: " +usd+ " USD <br /> <br />");
+
+usd = Math.floor(usd *100) /100;
+document.write("Saldo: " +usd+ " USD <br /> <br />");
+
+// zakupy
+
+var zakupy = 23.99;
+document.write("Zakupy: " +zakupy+ " USD <br /> <br />");
+
+
+var prowizja = 0.02*zakupy;
+document.write("Prowizja: " +prowizja+ " USD <br /> <br />");
+
+
+prowizja = Math.ceil(prowizja *100) /100;
+document.write("Prowizja: " +prowizja+ " USD <br /> <br />");
+
+//Po zakupach
+
+usd= usd - zakupy - prowizja;
+document.write("Saldo po zakupach: " +usd+ " USD <br /> <br />");
+
+usd=225.99;
+
+usd=Math.trunc(usd);
+
+document.write("Saldo po obcięciu: " +usd+ " USD <br /> <br />");
+
+</script>
+
+
+
+</body>
+</html>
