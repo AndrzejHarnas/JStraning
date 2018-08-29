@@ -12,6 +12,9 @@ img
 	max-width: 450px;
 }
 
+
+
+
 #pojemnik
 {
 	width:900px;
@@ -19,14 +22,48 @@ img
 	margin-right:auto;	
 }
 
+#licznik
+{
+	width:80px;	
+	margin-top:50px;
+	margin-bottom:50px;
+	text-align:center;
+	font-size:48;
+	min-height:59px;	
+	float:left;
+
+}
+#timer
+{
+	
+    width:40px;	
+	margin-top:50px;
+	margin-bottom:50px;
+	text-align:center;
+	font-size:48;
+	min-height:59px;	
+	float:left;
+	color:red;
+	
+}
+
+#odlicznie
+{
+	
+	color: red;
+	
+}
+
+
 #plansza
 {
-	width:900px;
+	width:780px;
 	margin-top:50px;
 	margin-bottom:50px;
 	text-align:center;
 	font-size:48;
 	min-height:60px;
+	float:left;	
 }
 
 #szubienica
